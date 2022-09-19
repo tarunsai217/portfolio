@@ -1,0 +1,27 @@
+.top-navigation {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  border: 1px solid hsla(0, 0%, 100%, 0.18);
+  padding: 1rem 2rem;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  background-color: #fefcf8;
+
+  .logo-wrapper {
+    height: 50px;
+    cursor: pointer;
+    img {
+      height: 100%;
+    }
+  }
+
+  .nav-items {
+    padding-left: 0;
+    display: flex;
+    list-style-type: none;
+    margin-left: auto;
+  }
+}
