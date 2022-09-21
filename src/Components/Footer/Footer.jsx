@@ -9,6 +9,8 @@ export default function Footer() {
     message: "",
   });
 
+  const [emailSent, setEmailSent] = useState(false);
+
   const onChangeHandler = (e) => {
     let change = {};
     change[e.target.id] = e.target.value;
@@ -24,8 +26,11 @@ export default function Footer() {
       formData,
       "fpmzz-xLqd7s1rRfd"
     );
-    console.log("formData", formData, res);
     setFormData({ name: "", email: "", message: "" });
+    setEmailSent(true);
+    setTimeout(() => {
+      setEmailSent(false);
+    }, 2000);
   };
   return (
     <section id="contact" className="feedback">
@@ -66,9 +71,17 @@ export default function Footer() {
           className="message-input"
           placeholder="Your Message"
         />
-        <button disabled={true} onClick={sendMessage}>
-          Send Message
-        </button>
+        {!emailSent && (
+          <button
+            disabled={!(formData.name && formData.email && formData.message)}
+            onClick={sendMessage}
+          >
+            Send Message
+          </button>
+        )}
+        {emailSent && (
+          <span className="message">Thanks for reaching out!!!</span>
+        )}
       </div>
     </section>
   );
