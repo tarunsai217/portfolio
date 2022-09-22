@@ -1,9 +1,9 @@
 import './App.css';
 import About from './Components/About';
 import Experience from './Components/Experience';
-import Footer from './Components/Footer';
-import Skills from './Components/Skills';
-import Projects from './Components/Projects';
+// import Footer from './Components/Footer';
+// import Skills from './Components/Skills';
+// import Projects from './Components/Projects';
 import TopNav from './Components/TopNav';
 
 function App() {
@@ -11,10 +11,10 @@ function App() {
     <div className="app">
       <TopNav />
       <About />
-      <Skills />
+      {/* <Skills />
       <Projects />
       <Experience />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
